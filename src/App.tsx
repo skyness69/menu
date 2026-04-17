@@ -22,38 +22,16 @@ const SingleLeaf = ({ className, color = "#4a5f3e" }: { className?: string, colo
 );
 
 function App() {
-  const [activeCategory, setActiveCategory] = useState(menuData[0].id);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 150);
-
-      const sections = menuData.map(cat => document.getElementById(`section-${cat.id}`));
-      let currentSection = menuData[0].id;
-
-      for (const section of sections) {
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= 200) {
-            currentSection = section.id.replace('section-', '');
-          }
-        }
-      }
-      setActiveCategory(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollToCategory = (id: string) => {
-    const el = document.getElementById(`section-${id}`);
-    if (el) {
-      const y = el.getBoundingClientRect().top + window.scrollY - 120;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="min-h-screen bg-[#2a3623] pt-6 pb-24 relative overflow-x-hidden flex flex-col items-center" dir="rtl">
