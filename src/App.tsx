@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { menuData } from './data';
-import { ChevronUp, Instagram, MapPin, Phone } from 'lucide-react';
+import { ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Decorative Botanical Component for reuse
@@ -18,6 +18,27 @@ const BotanicalBranch = ({ className, color = "#4a5f3e", fruitColor = "#8b2d2d" 
 const SingleLeaf = ({ className, color = "#4a5f3e" }: { className?: string, color?: string }) => (
   <svg viewBox="0 0 100 100" className={className} fill={color}>
     <path d="M50,10 Q70,40 50,90 Q30,40 50,10" />
+  </svg>
+);
+
+const InstagramIcon = ({ size = 24, className }: { size?: number, className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
+const MapPinIcon = ({ size = 24, className }: { size?: number, className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+    <circle cx="12" cy="10" r="3"></circle>
+  </svg>
+);
+
+const PhoneIcon = ({ size = 24, className }: { size?: number, className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
   </svg>
 );
 
@@ -223,18 +244,18 @@ function App() {
         <div className="flex flex-col items-center gap-6 mb-10 w-full max-w-md">
           {/* Social & Contact */}
           <a href="https://www.instagram.com/gusn_alrumaan/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-white transition-colors opacity-80 hover:opacity-100">
-            <Instagram size={20} />
+            <InstagramIcon size={20} />
             <span className="font-sans text-sm tracking-widest" dir="ltr">@gusn_alrumaan</span>
           </a>
           
           <a href="https://l.instagram.com/?u=https%3A%2F%2Fmaps.app.goo.gl%2F5JrXC8feKzdf83fE6%3Fg_st%3Dcom.google.maps.preview.copy%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnDUc4W36nNUdUehQxClohBKpDkyrhSdZwHRD1XF8xKnLRktdGtCfzs09yReg_aem_kRz9gGQwkFRoeyBbygnj-A&e=AT7mMkykp1uryPOaWI6KyUh151sSlrHMigMAz6Ls0V5D556AiMQQUWQ8MLOQFxFSkZt9-RRdGz0J6d5W_gV6QpY986OfPzQExVJ7-0M4VgtV1FBxklIGMpmm_A" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-white transition-colors text-center opacity-80 hover:opacity-100">
-            <MapPin size={20} className="flex-shrink-0" />
+            <MapPinIcon size={20} className="flex-shrink-0" />
             <span className="font-arabic text-sm">الموقع على الخريطة</span>
           </a>
 
           <div className="flex flex-col items-center gap-2 mt-4 opacity-80">
             <div className="flex items-center gap-3 mb-1">
-              <Phone size={18} />
+              <PhoneIcon size={18} />
               <span className="font-arabic text-sm">للحجز والاستفسار:</span>
             </div>
             <a href="tel:07739000707" className="font-sans text-sm tracking-widest hover:text-white transition-colors" dir="ltr">0773 900 0707</a>
