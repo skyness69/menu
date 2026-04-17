@@ -78,7 +78,7 @@ function App() {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center">
           {/* Refined Classical Logo Container */}
           <div className="w-32 h-32 bg-[#E9DBC5] rounded-full p-4 shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-2 border-white/20 flex items-center justify-center mb-10 relative">
-            <img src="/logo.png" alt="Logo" className="w-[85%] h-[85%] object-contain drop-shadow-lg" />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" className="w-[85%] h-[85%] object-contain drop-shadow-lg" />
           </div>
 
           <h1 className="text-4xl md:text-6xl font-arabic font-bold text-[#E9DBC5] mb-2 drop-shadow-sm">غصن الرمان</h1>
