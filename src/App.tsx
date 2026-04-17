@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { menuData } from './data';
-import { ChevronUp } from 'lucide-react';
+import { ChevronUp, Instagram, MapPin, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Decorative Botanical Component for reuse
@@ -219,7 +219,32 @@ function App() {
       </AnimatePresence>
 
       {/* Footer */}
-      <footer className="text-center py-16 text-[#E9DBC5] z-20">
+      <footer className="w-full flex flex-col items-center justify-center py-16 px-6 text-[#E9DBC5] z-20">
+        <div className="flex flex-col items-center gap-6 mb-10 w-full max-w-md">
+          {/* Social & Contact */}
+          <a href="https://www.instagram.com/gusn_alrumaan/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-white transition-colors opacity-80 hover:opacity-100">
+            <Instagram size={20} />
+            <span className="font-sans text-sm tracking-widest" dir="ltr">@gusn_alrumaan</span>
+          </a>
+          
+          <a href="https://l.instagram.com/?u=https%3A%2F%2Fmaps.app.goo.gl%2F5JrXC8feKzdf83fE6%3Fg_st%3Dcom.google.maps.preview.copy%26utm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnDUc4W36nNUdUehQxClohBKpDkyrhSdZwHRD1XF8xKnLRktdGtCfzs09yReg_aem_kRz9gGQwkFRoeyBbygnj-A&e=AT7mMkykp1uryPOaWI6KyUh151sSlrHMigMAz6Ls0V5D556AiMQQUWQ8MLOQFxFSkZt9-RRdGz0J6d5W_gV6QpY986OfPzQExVJ7-0M4VgtV1FBxklIGMpmm_A" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-white transition-colors text-center opacity-80 hover:opacity-100">
+            <MapPin size={20} className="flex-shrink-0" />
+            <span className="font-arabic text-sm">الموقع على الخريطة</span>
+          </a>
+
+          <div className="flex flex-col items-center gap-2 mt-4 opacity-80">
+            <div className="flex items-center gap-3 mb-1">
+              <Phone size={18} />
+              <span className="font-arabic text-sm">للحجز والاستفسار:</span>
+            </div>
+            <a href="tel:07739000707" className="font-sans text-sm tracking-widest hover:text-white transition-colors" dir="ltr">0773 900 0707</a>
+            <a href="tel:07739000120" className="font-sans text-sm tracking-widest hover:text-white transition-colors" dir="ltr">0773 900 0120</a>
+            <a href="tel:07739000140" className="font-sans text-sm tracking-widest hover:text-white transition-colors" dir="ltr">0773 900 0140</a>
+          </div>
+        </div>
+
+        <div className="w-24 h-[1px] bg-[#E9DBC5]/20 mb-8"></div>
+
         <p className="font-arabic font-bold text-2xl tracking-[0.2em]">غصن الرمان</p>
         <p className="text-[12px] opacity-40 uppercase tracking-[0.8em] mt-2">Ghusn Al-Rumaan</p>
       </footer>
