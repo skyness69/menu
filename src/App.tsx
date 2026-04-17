@@ -97,13 +97,12 @@ function App() {
       {/* Hero Branding Section */}
       <header className="relative w-full py-8 text-center text-white mb-2 z-20 flex flex-col items-center">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center">
-          {/* Logo without background, colorized via precise CSS filters to match #E9DBC5 */}
-          <div className="w-28 h-28 flex items-center justify-center mb-8 relative">
+          {/* Logo with perfect background extraction via background fill and screen blend mode */}
+          <div className="flex items-center justify-center mb-8 relative">
             <img 
               src={`${import.meta.env.BASE_URL}logo.png`} 
               alt="Logo" 
-              className="w-full h-full object-contain mix-blend-screen opacity-100" 
-              style={{ filter: 'sepia(1) hue-rotate(345deg) saturate(0.7) brightness(0.95)' }}
+              className="h-32 w-auto object-contain bg-[#E9DBC5] mix-blend-screen" 
             />
           </div>
 
