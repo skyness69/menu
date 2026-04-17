@@ -97,9 +97,26 @@ function App() {
       {/* Hero Branding Section */}
       <header className="relative w-full py-8 text-center text-white mb-2 z-20 flex flex-col items-center">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center">
-          {/* Logo without background */}
+          {/* SVG Filter to remove black background and colorize white to #E9DBC5 */}
+          <svg className="w-0 h-0 absolute pointer-events-none">
+            <filter id="logo-color">
+              <feColorMatrix type="matrix" values="
+                0.913 0 0 0 0
+                0.858 0 0 0 0
+                0.772 0 0 0 0
+                1     0 0 0 0
+              " />
+            </filter>
+          </svg>
+
+          {/* Logo without background, colorized via SVG filter */}
           <div className="w-28 h-28 flex items-center justify-center mb-8 relative">
-            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Logo" className="w-full h-full object-contain drop-shadow-2xl" />
+            <img 
+              src={`${import.meta.env.BASE_URL}logo.png`} 
+              alt="Logo" 
+              className="w-full h-full object-contain" 
+              style={{ filter: 'url(#logo-color)' }}
+            />
           </div>
 
           <h1 className="text-4xl md:text-6xl font-arabic font-bold text-[#E9DBC5] mb-2 drop-shadow-sm">غصن الرمان</h1>
