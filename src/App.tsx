@@ -97,12 +97,25 @@ function App() {
       {/* Hero Branding Section */}
       <header className="relative w-full py-8 text-center text-white mb-2 z-20 flex flex-col items-center">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center">
-          {/* Logo with perfect background extraction via background fill and screen blend mode */}
-          <div className="flex items-center justify-center mb-8 relative">
+          {/* SVG Filter to invert the stencil: makes the black box transparent, and the transparent calligraphy #E9DBC5 */}
+          <svg width="0" height="0" style={{ position: 'absolute' }}>
+            <filter id="stencil-to-logo">
+              <feColorMatrix type="matrix" values="
+                0 0 0 0 0.913
+                0 0 0 0 0.858
+                0 0 0 0 0.772
+                0 0 0 -1 1
+              " />
+            </filter>
+          </svg>
+
+          {/* Logo extracted from stencil via SVG filter */}
+          <div className="w-32 h-32 flex items-center justify-center mb-6 relative">
             <img 
               src={`${import.meta.env.BASE_URL}logo.png`} 
               alt="Logo" 
-              className="h-32 w-auto object-contain bg-[#E9DBC5] mix-blend-screen" 
+              className="w-full h-full object-contain drop-shadow-md" 
+              style={{ filter: 'url(#stencil-to-logo)' }}
             />
           </div>
 
