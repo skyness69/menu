@@ -97,25 +97,13 @@ function App() {
       {/* Hero Branding Section */}
       <header className="relative w-full py-8 text-center text-white mb-2 z-20 flex flex-col items-center">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center">
-          {/* SVG Filter to remove black background and colorize white to #E9DBC5 */}
-          <svg className="w-0 h-0 absolute pointer-events-none">
-            <filter id="logo-color">
-              <feColorMatrix type="matrix" values="
-                0.913 0 0 0 0
-                0.858 0 0 0 0
-                0.772 0 0 0 0
-                1     0 0 0 0
-              " />
-            </filter>
-          </svg>
-
-          {/* Logo without background, colorized via SVG filter */}
+          {/* Logo without background, colorized via CSS filters */}
           <div className="w-28 h-28 flex items-center justify-center mb-8 relative">
             <img 
               src={`${import.meta.env.BASE_URL}logo.png`} 
               alt="Logo" 
-              className="w-full h-full object-contain" 
-              style={{ filter: 'url(#logo-color)' }}
+              className="w-full h-full object-contain mix-blend-screen opacity-90" 
+              style={{ filter: 'sepia(0.8) hue-rotate(330deg) saturate(1.5) brightness(0.95)' }}
             />
           </div>
 
