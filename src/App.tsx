@@ -97,27 +97,12 @@ function App() {
       {/* Hero Branding Section */}
       <header className="relative w-full py-8 text-center text-white mb-2 z-20 flex flex-col items-center">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center">
-          {/* SVG Filter to invert the stencil: makes the black box transparent, and the transparent calligraphy #E9DBC5 */}
-          <svg width="0" height="0" style={{ position: 'absolute' }}>
-            <filter id="stencil-to-logo">
-              <feColorMatrix type="matrix" values="
-                0 0 0 0 0.913
-                0 0 0 0 0.858
-                0 0 0 0 0.772
-                0 0 0 -1 1
-              " />
-            </filter>
-          </svg>
-
-          {/* Logo extracted from stencil via SVG filter */}
-          <div className="w-32 h-32 flex items-center justify-center mb-6 relative">
-            <img 
-              src={`${import.meta.env.BASE_URL}logo.png`} 
-              alt="Logo" 
-              className="w-full h-full object-contain drop-shadow-md" 
-              style={{ filter: 'url(#stencil-to-logo)' }}
-            />
-          </div>
+          {/* Plain Logo */}
+          <img
+            src={`${import.meta.env.BASE_URL}logo.png`}
+            alt="Logo"
+            className="w-36 h-36 object-contain mb-6"
+          />
 
           <h1 className="text-4xl md:text-6xl font-arabic font-bold text-[#E9DBC5] mb-2 drop-shadow-sm">غصن الرمان</h1>
           <p className="text-[14px] md:text-[16px] font-sans font-black tracking-[0.5em] text-[#E9DBC5] opacity-80 uppercase">Ghusn Al-Rumaan</p>
